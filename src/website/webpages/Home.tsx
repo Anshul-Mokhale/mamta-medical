@@ -20,8 +20,7 @@ import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { faUpload } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Navbar from "../laycomp/Navbar"
-import Footer from "../laycomp/Footer"
+import Layout from "../layaut/Layout"
 import { useEffect } from "react"
 // SwiperCore.use([Autoplay, Pagination]);
 
@@ -53,8 +52,8 @@ function Home() {
     }, []);
 
     return (
-        <>
-            <Navbar />
+        <Layout>
+
             <div style={{ overflowY: "hidden" }} className='Home'>
                 <div className="Home-1">
                     <div className="heading">
@@ -261,8 +260,8 @@ function Home() {
                     </Swiper>
                 </div>
             </div >
-            <Footer />
-        </>
+        </Layout>
+
 
     )
 }

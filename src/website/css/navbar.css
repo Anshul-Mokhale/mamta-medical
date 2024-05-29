@@ -24,14 +24,19 @@ html {
 }
 
 body.darks {
-    --lighte: #121233;
-    --grey: #060714;
+    /* --lighte: #121233; */
+    --lighte: rgb(36 48 63);
+    /* --grey: #060714; */
+    --grey: rgb(28 36 52);
     --darke: #fbfbfb;
 }
 
 div.darks {
-    --grey: #060714;
-    --lighte: #0c0c1e;
+    /* --grey: #060714; */
+    --grey: rgb(28 36 52);
+    /* --lighte: #0c0c1e; */
+    --lighte: rgb(36 48 63);
+
     background: var(--grey);
 }
 

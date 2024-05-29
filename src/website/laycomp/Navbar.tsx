@@ -7,6 +7,8 @@ import { useEffect } from "react"
 
 
 function Navbar() {
+
+
     useEffect(() => {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         const handleChange = (e: MediaQueryListEvent) => {
