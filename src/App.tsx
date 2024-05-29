@@ -15,6 +15,9 @@ import Settings from './pages/Settings';
 import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
+import Home from './website/webpages/Home';
+import About from './website/webpages/About';
+import Contact from './website/webpages/Contact';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -35,6 +38,33 @@ function App() {
       <Routes>
         <Route
           index
+          element={
+            <>
+              <PageTitle title="Mamta medical" />
+              <Home />
+            </>
+          }
+        />
+        <Route
+          path='/about'
+          element={
+            <>
+              <PageTitle title="Mamta medical" />
+              <About />
+            </>
+          }
+        />
+        <Route
+          path='/contact'
+          element={
+            <>
+              <PageTitle title="Mamta medical" />
+              <Contact />
+            </>
+          }
+        />
+        <Route
+          path='/dashboard'
           element={
             <>
               <PageTitle title="Mamta medical | Dashboard" />
@@ -124,7 +154,7 @@ function App() {
           }
         />
         <Route
-          path="/auth/signin"
+          path="/user/signin"
           element={
             <>
               <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" />
@@ -133,7 +163,7 @@ function App() {
           }
         />
         <Route
-          path="/auth/signup"
+          path="/user/signup"
           element={
             <>
               <PageTitle title="Signup | TailAdmin - Tailwind CSS Admin Dashboard Template" />

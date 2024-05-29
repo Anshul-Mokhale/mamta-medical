@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+.About-1 {
+    position: relative;
+    /* Ensure the container is positioned relatively for absolute positioning of the :before element */
+    margin-top: 65px;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    font-family: "Montserrat", sans-serif;
+
+    /* Ensures the content is above the :before overlay */
+}
+
+.About-1:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('../assets/aboutusbg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    filter: brightness(40%);
+    /* Dark overlay with 50% opacity */
+    z-index: -1;
+    /* Ensures the overlay is behind the content */
+}
+
+.About-1 h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+.About-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+}
+
+.About-inner-block {
+    width: 80%;
+    color: var(--darke);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    background-color: var(--lighte);
+    padding: 1em;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.About-inner-block li {
+    list-style: none;
+}
+
+.About-inner-block h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.About-inner-block img {
+    width: 200px;
+}
+
+@media (max-width:700px) {
+    .About-inner-block {
+        width: 100%;
+    }
+
+}
+
+@media (max-width:530px) {
+    .About-1 {
+        height: 150px;
+    }
+
+    .About-1 h1 {
+        font-size: 25px;
+    }
+
+    .About-inner-block h1 {
+        font-size: 25px;
+    }
+
+    .About-inner-block img {
+        width: 150px;
+    }
+}

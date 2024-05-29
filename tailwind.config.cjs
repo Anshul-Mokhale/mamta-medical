@@ -2,8 +2,9 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true,
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
+  darkMode: 'media',
   theme: {
     fontFamily: {
       satoshi: ['Satoshi', 'sans-serif'],
