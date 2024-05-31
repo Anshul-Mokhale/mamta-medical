@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import SidebarLinkGroup from './SidebarLinkGroup';
-import Logo from '../../images/logo/logo.svg';
+import Logo from '../../website/assets/logo/logo-no-background.png';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -64,7 +64,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <NavLink to="/">
-          <img src={Logo} alt="Logo" />
+          <img src={Logo} alt="Logo" className='' />
         </NavLink>
 
         <button
@@ -113,7 +113,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       <NavLink
                         to="#"
                         className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${(pathname === '/' ||
-                            pathname.includes('dashboard')) &&
+                          pathname.includes('dashboard')) &&
                           'bg-graydark dark:bg-meta-4'
                           }`}
                         onClick={(e) => {
@@ -259,7 +259,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       <NavLink
                         to="#"
                         className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${(pathname === '/forms' ||
-                            pathname.includes('forms')) &&
+                          pathname.includes('forms')) &&
                           'bg-graydark dark:bg-meta-4'
                           }`}
                         onClick={(e) => {

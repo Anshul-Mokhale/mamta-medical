@@ -7,10 +7,18 @@ interface User {
     name: string;
 }
 
+interface Register {
+    name: string;
+    email: string;
+    phone: string;
+    password: string;
+}
+
 // Define the shape of the context value
 interface UserContextType {
     user: User | null;
     login: (email: string, password: string) => Promise<{ status: string, message?: string, name?: string }>;
+    register: (name: string, email: string, phone: string, password: string) => Promise<{ status: string, message?: string }>;
     logout: () => void;
 }
 
@@ -63,13 +71,45 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         }
     };
 
+    const register = async (name: string, email: string, phone: string, password: string): Promise<{ status: string, message?: string }> => {
+        try {
+            const response = await fetch('http://localhost/medical-backend/register/index.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, phone, password }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+
+            if (data.status === 'ok') {
+                const user = { email, token: 'fake-jwt-token', name }; // Adjust token handling based on your actual response
+                setUser(user);
+                localStorage.setItem('user', JSON.stringify(user));
+                setError(null);
+                return data;
+            } else {
+                setError(data.message || 'Registration failed');
+                return data;
+            }
+        } catch (error: any) {
+            // setError(error.message || 'An error occurred during registration');
+            return { status: 'error', message: error.message || 'An error occurred during registration' };
+        }
+    };
+
     const logout = () => {
         setUser(null);
         localStorage.removeItem('user');
     };
 
     return (
-        <UserContext.Provider value={{ user, login, logout }}>
+        <UserContext.Provider value={{ user, login, register, logout }}>
             {children}
             {error && <div style={{ color: 'red' }}>{error}</div>}
         </UserContext.Provider>

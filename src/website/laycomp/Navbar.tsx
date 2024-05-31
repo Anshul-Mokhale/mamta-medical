@@ -2,7 +2,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/logo/logo-no-background.png";
 import "../css/navbar.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { useUser } from "../../context/UserContext";
 
@@ -60,8 +60,8 @@ function Navbar() {
                 {!user && (
                     <div className="Navbar-buttons">
 
-                        <li><NavLink to="/user/signin">Login</NavLink></li>
-                        <li><NavLink to="/user/signup">Signup</NavLink></li>
+                        <li><NavLink to="/user/sign-in">Login</NavLink></li>
+                        <li><NavLink to="/user/sign-up">Signup</NavLink></li>
                     </div>
 
                 )}
@@ -92,12 +92,13 @@ function Navbar() {
                     <h5 className="offcanvas-title" id="offcanvasExampleLabel">
                         <img src={logo} alt="logo" />
                     </h5>
-                    <button
+                    {/* <button
                         type="button"
                         className="btn-close"
                         data-bs-dismiss="offcanvas"
                         aria-label="Close"
-                    />
+                    /> */}
+                    <button className="btn-close text-dark dark:text-white" data-bs-dismiss="offcanvas" aria-label="Close"><FontAwesomeIcon icon={faX} /></button>
                 </div>
                 <div className="offcanvas-body">
                     <div className="inner-offcanvas-body">
@@ -107,8 +108,8 @@ function Navbar() {
                         <li><NavLink to="/shop">Shop</NavLink></li>
                         {!user && (
                             <>
-                                <li><NavLink to="/user/signin" className="login-butn">Login</NavLink></li>
-                                <li><NavLink to="/user/signup" className="login-butn">Signup</NavLink></li>
+                                <li><NavLink to="/user/sign-in" className="login-butn">Login</NavLink></li>
+                                <li><NavLink to="/user/sign-up" className="login-butn">Signup</NavLink></li>
                             </>
                         )}
                         {user && (

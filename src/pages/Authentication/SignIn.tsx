@@ -288,7 +288,7 @@ const SignIn: React.FC = () => {
               <div className="mt-6 text-center">
                 <p>
                   Don’t have any account?{' '}
-                  <Link to="/auth/signup" className="text-primary">
+                  <Link to="/user/sign-up" className="text-primary">
                     Sign Up
                   </Link>
                 </p>

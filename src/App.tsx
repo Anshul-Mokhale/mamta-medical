@@ -167,7 +167,7 @@ function App() {
           }
         />
         <Route
-          path="/user/signin"
+          path="/user/sign-in"
           element={
             <>
               <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" />
@@ -177,7 +177,7 @@ function App() {
         />
 
         <Route
-          path="/user/signup"
+          path="/user/sign-up"
           element={
             <>
               <PageTitle title="Signup | TailAdmin - Tailwind CSS Admin Dashboard Template" />
