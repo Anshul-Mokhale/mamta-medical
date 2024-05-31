@@ -8,8 +8,19 @@ import ChatCard from '../../components/Chat/ChatCard';
 import MapOne from '../../components/Maps/MapOne';
 import TableOne from '../../components/Tables/TableOne';
 import DefaultLayout from '../../layout/DefaultLayout';
+// import { useUser } from '../../context/UserContext';
+// import { useNavigate } from 'react-router-dom';
 
 const ECommerce: React.FC = () => {
+  // const navigate = useNavigate();
+  // const { user } = useUser();
+
+
+  // useEffect(() => {
+  //   if (!user) {
+  //     navigate('/user/signin');
+  //   }
+  // }, [user, navigate]);
 
   return (
     <DefaultLayout>

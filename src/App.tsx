@@ -18,6 +18,7 @@ import Buttons from './pages/UiElements/Buttons';
 import Home from './website/webpages/Home';
 import About from './website/webpages/About';
 import Contact from './website/webpages/Contact';
+import PrivateRoute from './PrivateRoute';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -63,7 +64,19 @@ function App() {
             </>
           }
         />
-        <Route
+        <Route element={<PrivateRoute />}>
+          <Route
+            path='/dashboard'
+            element={
+              <>
+                <PageTitle title="Mamta medical | Dashboard" />
+                <ECommerce />
+              </>
+            }
+          />
+        </Route>
+
+        {/* <Route
           path='/dashboard'
           element={
             <>
@@ -71,7 +84,7 @@ function App() {
               <ECommerce />
             </>
           }
-        />
+        /> */}
         <Route
           path="/calendar"
           element={
@@ -162,6 +175,7 @@ function App() {
             </>
           }
         />
+
         <Route
           path="/user/signup"
           element={
