@@ -40,7 +40,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     const login = async (email: string, password: string): Promise<{ status: string, message?: string, name?: string }> => {
         try {
-            const response = await fetch('http://localhost/medical-backend/login/index.php', {
+            const response = await fetch('https://mamtamedical4u.great-site.net/login/index.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     const register = async (name: string, email: string, phone: string, password: string): Promise<{ status: string, message?: string }> => {
         try {
-            const response = await fetch('http://localhost/medical-backend/register/index.php', {
+            const response = await fetch('https://mamtamedical4u.great-site.net/register/index.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -91,6 +91,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
                 const user = { email, token: 'fake-jwt-token', name }; // Adjust token handling based on your actual response
                 setUser(user);
                 localStorage.setItem('user', JSON.stringify(user));
+                localStorage.setItem('newRegister', 'ok');
                 setError(null);
                 return data;
             } else {

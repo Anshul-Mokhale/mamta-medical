@@ -19,6 +19,11 @@ import Home from './website/webpages/Home';
 import About from './website/webpages/About';
 import Contact from './website/webpages/Contact';
 import PrivateRoute from './PrivateRoute';
+import Termandcondition from './website/webpages/Termandcondition';
+import Termofservice from './website/webpages/Termofservice';
+import Privacypolicy from './website/webpages/Privacypolicy';
+import Refund from './website/webpages/Refund';
+
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -50,7 +55,7 @@ function App() {
           path='/about'
           element={
             <>
-              <PageTitle title="Mamta medical" />
+              <PageTitle title="About | Mamta medical" />
               <About />
             </>
           }
@@ -59,8 +64,44 @@ function App() {
           path='/contact'
           element={
             <>
-              <PageTitle title="Mamta medical" />
+              <PageTitle title="Contact | Mamta medical" />
               <Contact />
+            </>
+          }
+        />
+        <Route
+          path='/terms-and-conditions'
+          element={
+            <>
+              <PageTitle title="Terms and Conditions | Mamta medical " />
+              <Termandcondition />
+            </>
+          }
+        />
+        <Route
+          path='/terms-of-services'
+          element={
+            <>
+              <PageTitle title="Terms of Services | Mamta medical " />
+              <Termofservice />
+            </>
+          }
+        />
+        <Route
+          path='/privacy-policy'
+          element={
+            <>
+              <PageTitle title="Privacy Policy | Mamta medical " />
+              <Privacypolicy />
+            </>
+          }
+        />
+        <Route
+          path='/refund-policy'
+          element={
+            <>
+              <PageTitle title="Refund Policy | Mamta medical " />
+              <Refund />
             </>
           }
         />
@@ -170,7 +211,7 @@ function App() {
           path="/user/sign-in"
           element={
             <>
-              <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Signin | Mamta Medical" />
               <SignIn />
             </>
           }
@@ -180,7 +221,7 @@ function App() {
           path="/user/sign-up"
           element={
             <>
-              <PageTitle title="Signup | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Signup | Mamta Medical" />
               <SignUp />
             </>
           }

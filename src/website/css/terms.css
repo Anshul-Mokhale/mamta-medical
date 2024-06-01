@@ -1,0 +1,82 @@
+.Terms {
+    position: relative;
+    margin-top: 60px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.Terms::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/tandc.jpg');
+    background-position: center;
+    background-size: cover;
+    filter: brightness(40%);
+    z-index: -1;
+}
+
+.Terms h1 {
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.Terms-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    font-family: "Montserrat", sans-serif;
+    color: var(--darke);
+    padding: 2em;
+}
+
+.Terms-1 h1 {
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.Terms-1 ol li {
+    list-style: decimal;
+    margin-left: 1em;
+
+}
+
+.Terms-1 ul li {
+    margin-left: 1em;
+    list-style: disc;
+}
+
+@media (max-width:800px) {
+    .Terms {
+        height: 250px;
+    }
+}
+
+@media (max-width:480px) {
+    .Terms {
+        height: 200px;
+    }
+
+    .Terms h1 {
+        font-size: 30px;
+    }
+
+    .Terms-1 {
+        padding: 1em;
+    }
+
+    .Terms-1 h1 {
+        font-size: 20px
+    }
+}

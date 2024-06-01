@@ -14,11 +14,10 @@ function Contact() {
                         <img src={contact} alt="" />
                     </div>
                     <div className="contactBoxRight">
-                        <h1>Contact Us</h1>
+                        <h1 className="text-3xl font-black">Contact Us</h1>
                         <form className='contactForm'>
-                            <div className="formName">
-                                <input type="text" placeholder='Enter First Name' required />
-                                <input type="text" placeholder='Enter Last Name' required />
+                            <div className="formEmail">
+                                <input type="text" placeholder='Enter Full Name' required />
                             </div>
                             <div className="formEmail">
                                 <input type="email" placeholder='Enter Email' required />

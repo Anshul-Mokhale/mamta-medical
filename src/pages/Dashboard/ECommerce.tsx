@@ -1,5 +1,4 @@
-import React from 'react';
-// import Cookies from 'js-cookie';
+import React, { useState, useEffect } from 'react';
 import CardDataStats from '../../components/CardDataStats';
 import ChartOne from '../../components/Charts/ChartOne';
 import ChartThree from '../../components/Charts/ChartThree';
@@ -8,22 +7,63 @@ import ChatCard from '../../components/Chat/ChatCard';
 import MapOne from '../../components/Maps/MapOne';
 import TableOne from '../../components/Tables/TableOne';
 import DefaultLayout from '../../layout/DefaultLayout';
-// import { useUser } from '../../context/UserContext';
-// import { useNavigate } from 'react-router-dom';
+
 
 const ECommerce: React.FC = () => {
-  // const navigate = useNavigate();
-  // const { user } = useUser();
 
+  const [umesg, setUmesg] = useState<string | null>('');
+  const showMessage = (message: string) => {
+    setUmesg(message);
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem('newRegister') == 'ok') {
+      showMessage("Welcome, Your registration is succesfull!");
+      const timer = setTimeout(() => {
+        localStorage.removeItem('newRegister');
+        setUmesg(null);
+      }, 4000); // 4000ms = 4 seconds
+
+      // Cleanup function to clear the timeout if the component unmounts
+      return () => clearTimeout(timer);
+    }
+  }, [umesg]);
 
   // useEffect(() => {
-  //   if (!user) {
-  //     navigate('/user/signin');
-  //   }
-  // }, [user, navigate]);
+  //   showMessage('');
+  // }, []);
+  // if (localStorage.getItem('newRegister') == 'ok') {
+  //   setUmesg('Welcome, Your registration is succesfull!');
+  // }
 
   return (
     <DefaultLayout>
+      {umesg ? (
+        <div className="flex w-full mb-5 border-l-6 border-[#34D399] bg-[#34D399] bg-opacity-[15%] px-7 py-8 shadow-md dark:bg-[#1B1B24] dark:bg-opacity-30 md:p-9">
+          <div className="mr-5 flex h-9 w-full max-w-[36px] items-center justify-center rounded-lg bg-[#34D399]">
+            <svg
+              width="16"
+              height="12"
+              viewBox="0 0 16 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.2984 0.826822L15.2868 0.811827L15.2741 0.797751C14.9173 0.401867 14.3238 0.400754 13.9657 0.794406L5.91888 9.45376L2.05667 5.2868C1.69856 4.89287 1.10487 4.89389 0.747996 5.28987C0.417335 5.65675 0.417335 6.22337 0.747996 6.59026L0.747959 6.59029L0.752701 6.59541L4.86742 11.0348C5.14445 11.3405 5.52858 11.5 5.89581 11.5C6.29242 11.5 6.65178 11.3355 6.92401 11.035L15.2162 2.11161C15.5833 1.74452 15.576 1.18615 15.2984 0.826822Z"
+                fill="white"
+                stroke="white"
+              ></path>
+            </svg>
+          </div>
+          <div className="w-full mb-0 flex items-center">
+            <h5 className="mb-0 font-semibold text-[#34D399]">
+              {umesg}
+            </h5>
+          </div>
+        </div>
+      ) : (
+        ''
+      )}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
         <CardDataStats title="Total views" total="$3.456K" rate="0.43%" levelUp>
           <svg

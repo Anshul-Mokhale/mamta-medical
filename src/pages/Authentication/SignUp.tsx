@@ -222,6 +222,7 @@ const SignUp: React.FC = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                    required
                   />
 
                   <span className="absolute right-4 top-4">
@@ -241,6 +242,7 @@ const SignUp: React.FC = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                    required
                   />
 
                   <span className="absolute right-4 top-4">
@@ -268,6 +270,7 @@ const SignUp: React.FC = () => {
                       setPhone(formattedPhone);
                     }}
                     className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                    required
                   />
 
                   <span className="absolute right-4 top-4">
@@ -287,6 +290,7 @@ const SignUp: React.FC = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                    required
                   />
 
                   <span className="absolute right-4 top-4">
@@ -306,6 +310,7 @@ const SignUp: React.FC = () => {
                     value={password2}
                     onChange={(e) => setPassword2(e.target.value)}
                     className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                    required
                   />
 
                   <span className="absolute right-4 top-4">

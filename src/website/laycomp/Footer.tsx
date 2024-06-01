@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import "../css/footer.css"
 import logo from "../assets/logo/logo-no-background.png"
+import "../css/terms.css";
 
 function Footer() {
     const currentYear = new Date().getFullYear();
@@ -22,10 +23,10 @@ function Footer() {
                     </div>
                     <div className="footer-three">
                         <h1>Leagel</h1>
-                        <li><Link to="">Terms and Conditions</Link></li>
-                        <li><Link to="">Terms of Services</Link></li>
-                        <li><Link to="">Privacy Policy</Link></li>
-                        <li><Link to="">Refund Policy</Link></li>
+                        <li><Link to="/terms-and-conditions">Terms and Conditions</Link></li>
+                        <li><Link to="/terms-of-services">Terms of Services</Link></li>
+                        <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                        <li><Link to="/refund-policy">Refund Policy</Link></li>
                     </div>
                 </div>
                 <div className="footer-bottom">

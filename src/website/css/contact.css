@@ -29,7 +29,6 @@
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
     padding: 1em;
     border-radius: 20px;
-    margin-top: 3em;
     background-color: var(--lighte);
 }
 
@@ -225,6 +224,16 @@
 @media (max-width:450px) {
     .formName {
         flex-direction: column;
+    }
+
+    .Contact {
+        padding: 1em;
+    }
+
+
+
+    .contactForm {
+        padding: 0;
     }
 
     .formSubmit {
