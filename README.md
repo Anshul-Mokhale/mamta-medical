@@ -20,11 +20,11 @@ Mamta Medical is an innovative online pharmacy platform aimed at simplifying the
 
 ## Getting Started
 
-To get started with Mamta Medical, simply visit our website at [www.mamtamedical.com] and sign up for an account. Once registered, you can start exploring our range of products, uploading prescriptions, and placing orders seamlessly.
+To get started with Mamta Medical, simply visit our website at [www.mamta-medical.netlify.app] and sign up for an account. Once registered, you can start exploring our range of products, uploading prescriptions, and placing orders seamlessly.
 
 ## Support
 
-If you have any questions or need assistance, please don't hesitate to contact our support team at [support@mamtamedical.com]. We're here to help!
+If you have any questions or need assistance, please don't hesitate to contact our support team at [anshulmokhale0712@gmail.com]. We're here to help!
 
 ## License
 
