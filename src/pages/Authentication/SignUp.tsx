@@ -23,9 +23,9 @@ const SignUp: React.FC = () => {
     if (password == password2) {
       const result = await (register(name, email, phone, password));
       setLoading(false);
-      if (result.status == 'ok') {
+      if (result.success == true) {
         setIsAuthenticated(true);
-        navigate('/dashboard')
+        navigate('/user/sign-in')
       } else {
         setMssg(result.message);
       }

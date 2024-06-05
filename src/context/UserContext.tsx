@@ -4,15 +4,11 @@ import React, { createContext, useState, useEffect, useContext, ReactNode } from
 interface User {
     email: string;
     token: string;
+    refreshtoken: string;
     name: string;
 }
 
-interface Register {
-    name: string;
-    email: string;
-    phone: string;
-    password: string;
-}
+
 
 // Define the shape of the context value
 interface UserContextType {
@@ -40,7 +36,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     const login = async (email: string, password: string): Promise<{ status: string, message?: string, name?: string }> => {
         try {
-            const response = await fetch('https://mamtamedical4u.great-site.net/login/index.php', {
+            const response = await fetch('https://medical-backend-rx5m.onrender.com/api/v1/users/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -54,10 +50,14 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
             const data = await response.json();
 
-            if (data.status === 'ok') {
-                const name = data.name;
-                const user = { email, token: 'fake-jwt-token', name }; // Adjust token handling based on your actual response
-                setUser(user);
+            if (data.success === true) {
+                const name = data.data.user.name;  // Correctly extracting the user's full name
+                const email = data.data.user.email;        // Extracting the user's email
+                const token = data.data.accessToken;       // Extracting the access token
+                const refreshtoken = data.data.refreshToken;
+                const userf = { email, token, refreshtoken, name };
+                console.log(userf); // Adjust token handling based on your actual response
+                setUser(userf);
                 localStorage.setItem('user', JSON.stringify(user));
                 setError(null);
                 return data;
@@ -73,7 +73,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     const register = async (name: string, email: string, phone: string, password: string): Promise<{ status: string, message?: string }> => {
         try {
-            const response = await fetch('https://mamtamedical4u.great-site.net/register/index.php', {
+            const response = await fetch('https://medical-backend-rx5m.onrender.com/api/v1/users/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -87,10 +87,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
             const data = await response.json();
 
-            if (data.status === 'ok') {
-                const user = { email, token: 'fake-jwt-token', name }; // Adjust token handling based on your actual response
-                setUser(user);
-                localStorage.setItem('user', JSON.stringify(user));
+            if (data.success === true) {
                 localStorage.setItem('newRegister', 'ok');
                 setError(null);
                 return data;

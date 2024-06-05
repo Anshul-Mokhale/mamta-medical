@@ -20,7 +20,7 @@ const SignIn: React.FC = () => {
     setLoading(true);
     const result = await login(email, password);
     setLoading(false);
-    if (result.status === 'ok') {
+    if (result.success === true) {
       setIsAuthenticated(true);
       navigate('/dashboard');
     } else {
