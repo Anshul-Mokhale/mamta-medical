@@ -13,16 +13,19 @@ import FormLayout from './pages/Form/FormLayout';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Tables from './pages/Tables';
-import Alerts from './pages/UiElements/Alerts';
-import Buttons from './pages/UiElements/Buttons';
+// import Alerts from './pages/UiElements/Alerts';
+// import Buttons from './pages/UiElements/Buttons';
 import Home from './website/webpages/Home';
 import About from './website/webpages/About';
 import Contact from './website/webpages/Contact';
-import PrivateRoute from './PrivateRoute';
+// import PrivateRoute from './PrivateRoute';
 import Termandcondition from './website/webpages/Termandcondition';
 import Termofservice from './website/webpages/Termofservice';
 import Privacypolicy from './website/webpages/Privacypolicy';
 import Refund from './website/webpages/Refund';
+import Order from './pages/Order';
+import Orderhistory from './pages/Orderhistory';
+import Bill from './pages/Bill';
 
 
 function App() {
@@ -105,7 +108,7 @@ function App() {
             </>
           }
         />
-        <Route element={<PrivateRoute />}>
+        {/* <Route element={<PrivateRoute />}>
           <Route
             path='/dashboard'
             element={
@@ -115,28 +118,47 @@ function App() {
               </>
             }
           />
-        </Route>
+        </Route> */}
 
-        {/* <Route
-          path='/dashboard'
-          element={
-            <>
-              <PageTitle title="Mamta medical | Dashboard" />
-              <ECommerce />
-            </>
-          }
-        /> */}
         <Route
-          path="/calendar"
+          path='/user/dashboard'
           element={
             <>
-              <PageTitle title="Calendar | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Calendar />
+              <PageTitle title="Dashboard | Mamta medical" />
+              <ECommerce />
             </>
           }
         />
         <Route
-          path="/profile"
+          path="/user/orders"
+          element={
+            <>
+              <PageTitle title="Orders | Mamta Medical" />
+              <Orderhistory />
+            </>
+          }
+        />
+        <Route
+          path="/user/orders/order-now"
+          element={
+            <>
+              <PageTitle title="Order Medication | Mamta Medical" />
+              <Order />
+            </>
+          }
+        />
+
+        <Route
+          path="/user/Bills"
+          element={
+            <>
+              <PageTitle title="Bills | Mamta Medical" />
+              <Bill />
+            </>
+          }
+        />
+        <Route
+          path="/user/profile"
           element={
             <>
               <PageTitle title="Profile | TailAdmin - Tailwind CSS Admin Dashboard Template" />
@@ -180,33 +202,7 @@ function App() {
             </>
           }
         />
-        <Route
-          path="/chart"
-          element={
-            <>
-              <PageTitle title="Basic Chart | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Chart />
-            </>
-          }
-        />
-        <Route
-          path="/ui/alerts"
-          element={
-            <>
-              <PageTitle title="Alerts | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Alerts />
-            </>
-          }
-        />
-        <Route
-          path="/ui/buttons"
-          element={
-            <>
-              <PageTitle title="Buttons | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Buttons />
-            </>
-          }
-        />
+
         <Route
           path="/user/sign-in"
           element={
