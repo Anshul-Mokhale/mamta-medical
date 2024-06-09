@@ -60,7 +60,7 @@ function Home() {
                         <h1>Mamta Medical: Your Trusted Online Pharmacy</h1>
                         <p>Upload Your Prescription, Get Your Medications Delivered!</p>
                         <div className="heading-button">
-                            <Link to=""><FontAwesomeIcon icon={faUpload} /> &nbsp; Upload Now</Link>
+                            <Link to="/user/orders/order-now"><FontAwesomeIcon icon={faUpload} /> &nbsp; Upload Now</Link>
                         </div>
                     </div>
                 </div>

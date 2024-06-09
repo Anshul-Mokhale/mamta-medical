@@ -26,6 +26,11 @@ import Orderhistory from './pages/Orderhistory';
 import Paymenthistory from './pages/Paymenthistory';
 import Help from './pages/Help';
 import CreateSupport from './pages/CreateSupport';
+import UpdateAccount from './pages/UpdateAccount';
+import ChangePassword from './pages/ChangePassword';
+import ViewTicket from './pages/ViewTicket';
+import ViewPayment from './pages/ViewPayment';
+import ViewOrder from './pages/ViewOrder';
 
 
 function App() {
@@ -148,11 +153,29 @@ function App() {
           }
         />
         <Route
+          path="/user/orders/view-order/:orderid"
+          element={
+            <>
+              <PageTitle title="View Transaction | Mamta Medical" />
+              <ViewOrder />
+            </>
+          }
+        />
+        <Route
           path="/user/payments"
           element={
             <>
-              <PageTitle title="Payments History | Mamta Medical" />
+              <PageTitle title="Payments | Mamta Medical" />
               <Paymenthistory />
+            </>
+          }
+        />
+        <Route
+          path="/user/payments/view-transaction/:paymentid"
+          element={
+            <>
+              <PageTitle title="View Transaction | Mamta Medical" />
+              <ViewPayment />
             </>
           }
         />
@@ -160,7 +183,7 @@ function App() {
           path="/user/profile"
           element={
             <>
-              <PageTitle title="Profile | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Profile | Mamta Medical" />
               <Profile />
             </>
           }
@@ -180,6 +203,33 @@ function App() {
             <>
               <PageTitle title="Create Ticket | Mamta Medical" />
               <CreateSupport />
+            </>
+          }
+        />
+        <Route
+          path="/user/help/view-ticket/:ticketid"
+          element={
+            <>
+              <PageTitle title="Create Ticket | Mamta Medical" />
+              <ViewTicket />
+            </>
+          }
+        />
+        <Route
+          path="/user/account-settings/update-account"
+          element={
+            <>
+              <PageTitle title="Update Account | Mamta Medical" />
+              <UpdateAccount />
+            </>
+          }
+        />
+        <Route
+          path="/user/account-settings/change-password"
+          element={
+            <>
+              <PageTitle title="Change Password | Mamta Medical" />
+              <ChangePassword />
             </>
           }
         />
