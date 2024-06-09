@@ -1,20 +1,20 @@
-import React from "react"
+import React from "react";
 import DefaultLayout from "../layout/DefaultLayout";
 import { Package } from '../types/package';
 import { Link } from "react-router-dom";
 import Breadcrumb from "../components/Breadcrumbs/Breadcrumb";
 
-const Bill: React.FC = () => {
+const Paymenthistory: React.FC = () => {
     const packageData: Package[] = [
         {
             name: 'Free package',
             invoiceDate: `Jan 13,2023`,
-            status: 'Generated',
+            status: 'Paid',
         },
         {
             name: 'Standard Package',
             invoiceDate: `Jan 13,2023`,
-            status: 'Failed',
+            status: 'Processing',
         },
         {
             name: 'Business Package',
@@ -24,17 +24,17 @@ const Bill: React.FC = () => {
         {
             name: 'Standard Package',
             invoiceDate: `Jan 13,2023`,
-            status: 'Processing',
+            status: 'Failed',
         },
         {
             name: 'Standard Package',
             invoiceDate: `Jan 13,2023`,
-            status: 'Processing',
+            status: 'Failed',
         },
     ];
     return (
         <DefaultLayout>
-            <Breadcrumb pageName="Bills" />
+            <Breadcrumb pageName="Payments" />
             <div>
                 <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
                     <div className="max-w-full overflow-x-auto">
@@ -42,13 +42,13 @@ const Bill: React.FC = () => {
                             <thead>
                                 <tr className="bg-gray-2 text-left dark:bg-meta-4">
                                     <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
-                                        Billing id
+                                        Order id
                                     </th>
                                     <th className="min-w-[150px] py-4 px-4 font-medium text-black dark:text-white">
-                                        Billing date
+                                        Order date
                                     </th>
                                     <th className="min-w-[120px] py-4 px-4 font-medium text-black dark:text-white">
-                                        Billing Status
+                                        Order Status
                                     </th>
                                     <th className="py-4 px-4 font-medium text-black dark:text-white">
                                         Actions
@@ -70,7 +70,7 @@ const Bill: React.FC = () => {
                                         </td>
                                         <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                                             <p
-                                                className={`inline-flex rounded-full bg-opacity-10 py-1 px-3 text-sm font-medium ${packageItem.status === 'Generated'
+                                                className={`inline-flex rounded-full bg-opacity-10 py-1 px-3 text-sm font-medium ${packageItem.status === 'Paid'
                                                     ? 'bg-teal-500 text-teal-500'
                                                     : packageItem.status === 'Failed'
                                                         ? 'bg-danger text-danger'
@@ -82,7 +82,9 @@ const Bill: React.FC = () => {
                                         </td>
                                         <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                                             <div className="flex items-center space-x-3.5">
-                                                <Link to="/view" className="hover:text-primary">
+                                                <Link
+                                                    to='/user/orders/vieworder'
+                                                    className="hover:text-primary text-center">
                                                     <svg
                                                         className="fill-current"
                                                         width="18"
@@ -100,8 +102,8 @@ const Bill: React.FC = () => {
                                                             fill=""
                                                         />
                                                     </svg>
-                                                </Link>
 
+                                                </Link>
                                                 <button className="hover:text-primary">
                                                     <svg
                                                         className="fill-current"
@@ -122,6 +124,7 @@ const Bill: React.FC = () => {
                                                     </svg>
                                                 </button>
                                             </div>
+
                                         </td>
                                     </tr>
                                 ))}
@@ -134,4 +137,4 @@ const Bill: React.FC = () => {
     )
 }
 
-export default Bill;
+export default Paymenthistory;

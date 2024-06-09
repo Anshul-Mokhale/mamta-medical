@@ -72,7 +72,7 @@ const ECommerce: React.FC = () => {
           <FontAwesomeIcon icon={faFileInvoice} className='text-primary text-2xl' />
         </CardDataStats>
       </div>
-      <div className='mt-4 flex flex-col items-center justify-center bg-white md:flex-row xl:flex-row'>
+      <div className='mt-4 flex flex-col items-center justify-center bg-white md:flex-row xl:flex-row dark:border-strokedark dark:bg-boxdark'>
         <img src={orderimage} alt="order now" className='w-100' />
         <div className="mb-7.5 flex flex-wrap gap-5 xl:gap-7.5">
           <Link

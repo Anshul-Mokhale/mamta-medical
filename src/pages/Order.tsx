@@ -108,6 +108,7 @@ const Order: React.FC = () => {
                                             placeholder="Write addetive items here"
                                         ></textarea>
                                     </div>
+
                                 </div>
 
                                 <div className="flex justify-end gap-4.5">

@@ -5,8 +5,6 @@ import Loader from './common/Loader';
 import PageTitle from './components/PageTitle';
 import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
-import Calendar from './pages/Calendar';
-import Chart from './pages/Chart';
 import ECommerce from './pages/Dashboard/ECommerce';
 import FormElements from './pages/Form/FormElements';
 import FormLayout from './pages/Form/FormLayout';
@@ -25,7 +23,9 @@ import Privacypolicy from './website/webpages/Privacypolicy';
 import Refund from './website/webpages/Refund';
 import Order from './pages/Order';
 import Orderhistory from './pages/Orderhistory';
-import Bill from './pages/Bill';
+import Paymenthistory from './pages/Paymenthistory';
+import Help from './pages/Help';
+import CreateSupport from './pages/CreateSupport';
 
 
 function App() {
@@ -147,13 +147,12 @@ function App() {
             </>
           }
         />
-
         <Route
-          path="/user/Bills"
+          path="/user/payments"
           element={
             <>
-              <PageTitle title="Bills | Mamta Medical" />
-              <Bill />
+              <PageTitle title="Payments History | Mamta Medical" />
+              <Paymenthistory />
             </>
           }
         />
@@ -163,6 +162,24 @@ function App() {
             <>
               <PageTitle title="Profile | TailAdmin - Tailwind CSS Admin Dashboard Template" />
               <Profile />
+            </>
+          }
+        />
+        <Route
+          path="/user/help"
+          element={
+            <>
+              <PageTitle title="Help | Mamta Medical" />
+              <Help />
+            </>
+          }
+        />
+        <Route
+          path="/user/help/create-ticket"
+          element={
+            <>
+              <PageTitle title="Create Ticket | Mamta Medical" />
+              <CreateSupport />
             </>
           }
         />

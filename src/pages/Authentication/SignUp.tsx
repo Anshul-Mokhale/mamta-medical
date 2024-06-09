@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../images/logo/logo-no-background.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faEnvelope, faLock, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faEnvelope, faHome, faLock, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useUser } from '../../context/UserContext';
 import { authContext } from '../../context/AuthContext';
 
@@ -278,7 +278,25 @@ const SignUp: React.FC = () => {
                   </span>
                 </div>
               </div>
+              <div className="mb-4">
+                <label className="mb-2.5 block font-medium text-black dark:text-white">
+                  Address
+                </label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Enter your Address"
+                    value={password}
+                    // onChange={(e) => setPassword(e.target.value)}
+                    className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                    required
+                  />
 
+                  <span className="absolute right-4 top-4">
+                    <FontAwesomeIcon icon={faHome} />
+                  </span>
+                </div>
+              </div>
               <div className="mb-4">
                 <label className="mb-2.5 block font-medium text-black dark:text-white">
                   Password
